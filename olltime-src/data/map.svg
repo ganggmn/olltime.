@@ -1,0 +1,44 @@
+<svg id="svg" viewBox="0 0 1000 720" preserveAspectRatio="xMidYMid meet" role="img" aria-label="올림픽공원 약도. 공연장, 출입문, 주차장, 지하철역 위치">
+        <defs>
+          <pattern id="hatch" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="5" height="5" fill="#FFFFFF"/><line x1="0" y1="0" x2="0" y2="5" stroke="#A1A1AA" stroke-width="1"/></pattern>
+        </defs>
+        <g id="world">
+          <rect x="-600" y="-400" width="2200" height="1500" fill="#FAFAFA"/>
+          <path d="M-80,684 H1100 M16,-80 V820 M996,320 V820" stroke="#D4D4D8" stroke-width="16" fill="none"/>
+          <path d="M-80,684 H1100 M16,-80 V820 M996,320 V820" stroke="#FFFFFF" stroke-width="14" fill="none"/>
+          <path d="M560,-60 C640,40 760,120 860,190 C930,240 990,280 1100,300" fill="none" stroke="#D4D4D8" stroke-width="28" stroke-linecap="round"/>
+          <path d="M560,-60 C640,40 760,120 860,190 C930,240 990,280 1100,300" fill="none" stroke="url(#hatch)" stroke-width="26" stroke-linecap="round"/>
+          <path id="park" d="M40,52 L590,44 C610,44 625,52 640,62 L975,292 L975,668 L40,668 Z" fill="#FFFFFF" stroke="#D4D4D8" stroke-width="1.2"/>
+          <path d="M160,112 C212,58 330,46 432,60 C498,70 536,96 552,140 L566,226 C600,262 640,300 640,356 C640,414 604,448 566,468 C544,522 500,566 432,588 C362,608 292,598 242,568 C192,538 160,498 150,446 C136,378 132,300 136,232 C138,180 142,140 160,112 Z" fill="#0A0A0A" fill-opacity=".045"/>
+          <g fill="none" stroke="#E5E5E5" stroke-width="1">
+            <path d="M196,170 C250,110 360,100 420,140 C470,175 470,250 430,300 C390,350 300,360 240,320 C190,285 170,215 196,170 Z"/>
+            <path d="M226,186 C270,140 350,134 396,164 C432,190 432,246 402,282 C370,318 304,324 260,294 C222,268 206,216 226,186 Z"/>
+            <path d="M260,400 C320,370 420,380 470,430 C510,470 480,530 410,548 C340,566 270,540 248,494 C232,460 236,420 260,400 Z"/>
+            <path d="M290,418 C336,398 410,404 446,440 C474,468 452,512 400,524 C348,536 296,518 280,486 C268,462 272,432 290,418 Z"/>
+          </g>
+          <circle cx="590" cy="340" r="42" fill="#0A0A0A" fill-opacity=".045"/>
+          <path d="M146,250 C118,330 128,430 168,500 C206,562 300,612 424,612" fill="none" stroke="#D4D4D8" stroke-width="18" stroke-linecap="round"/>
+          <path d="M146,250 C118,330 128,430 168,500 C206,562 300,612 424,612" fill="none" stroke="url(#hatch)" stroke-width="16" stroke-linecap="round"/>
+          <ellipse cx="500" cy="178" rx="26" ry="52" transform="rotate(18 500 178)" fill="url(#hatch)" stroke="#D4D4D8"/>
+          <path d="M150,330 C230,300 300,260 360,250 C420,240 480,280 560,300 M300,110 C300,200 320,300 290,420 C270,500 300,560 340,600 M420,70 C410,160 440,300 520,380 C560,420 600,440 640,450 M180,460 C260,470 360,470 470,440" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round"/>
+          <path d="M640,62 L640,668 M566,468 L975,468 M640,280 L975,280 M760,280 V668" fill="none" stroke="#E5E5E5" stroke-width="1"/>
+          <circle cx="905" cy="622" r="36" fill="#0A0A0A" fill-opacity=".045"/>
+          <circle cx="200" cy="505" r="34" fill="#FFFFFF" stroke="#D4D4D8"/>
+          <g id="bld" fill="#FFFFFF" stroke="#A1A1AA" stroke-width="1">
+            <ellipse cx="598" cy="196" rx="38" ry="28"/>
+            <circle cx="684" cy="262" r="34" id="b-kspo"/>
+            <circle cx="684" cy="372" r="27"/>
+            <rect x="622" y="434" width="56" height="38" transform="rotate(-14 650 453)"/>
+            <ellipse cx="575" cy="502" rx="40" ry="28"/>
+            <circle cx="851" cy="506" r="25"/>
+            <rect x="858" y="396" width="56" height="44"/>
+            <rect x="748" y="540" width="70" height="26"/>
+            <rect x="322" y="634" width="48" height="24"/>
+            <rect x="528" y="632" width="50" height="28"/>
+            <rect x="88" y="432" width="32" height="50"/>
+            <circle cx="80" cy="352" r="17"/>
+          </g>
+          <g transform="translate(238 236)"><rect x="-1" y="0" width="2" height="12" fill="#6B6B74"/><circle cx="0" cy="-6" r="9" fill="#6B6B74"/></g>
+        </g>
+        <g id="dyn"></g>
+      </svg>

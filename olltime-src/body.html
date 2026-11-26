@@ -1,0 +1,110 @@
+<body>
+<a class="skip" href="#main">본문 바로가기</a>
+<header class="hd"><div class="wrap">
+  <a class="brand" href="#now">올타임</a>
+  <nav class="tabs" aria-label="주요 메뉴"><a href="#now">지금</a><a href="#shows">공연</a><a href="#plan">플래너</a><a href="#story">데이터</a><a href="#lost">분실물</a></nav>
+  <span class="cap" id="stamp">서울시 데이터 불러오는 중</span>
+</div></header>
+
+<main id="main" tabindex="-1">
+<section class="hero" id="now" aria-busy="true"><div class="wrap hgrid">
+  <div class="h-t">
+    <p class="cap" id="heroCap">서울시 실시간 도시데이터를 불러오는 중이에요</p>
+    <h1 id="heroH">지금 혼잡도를 불러오는 중이에요</h1>
+    <p class="lead" id="heroLead">서울시가 공개하는 공원 인구와 예보를 가져오고 있어요. 공연 예상과 플래너는 바로 쓸 수 있어요.</p>
+    <p class="note" id="carNote" hidden></p>
+    <div class="acts"><a class="btn" href="#plan">방문 계획 세우기</a><button class="btn sec" type="button" id="retry" hidden>다시 불러오기</button></div>
+  </div>
+  <div class="h-m">
+    <div class="vsw" id="vsw" role="group" aria-label="지도에 보여줄 날" hidden></div>
+    <div class="mapbox">
+      <div class="map" id="map">__MAPSVG__</div>
+      <div class="mapctl"><button type="button" id="zin" aria-label="지도 확대"><i data-ic="plus"></i></button><button type="button" id="zout" aria-label="지도 축소"><i data-ic="minus"></i></button><button type="button" id="zre" aria-label="지도 처음 크기로"><i data-ic="rotate-ccw"></i></button></div>
+    </div>
+    <p class="cap mapleg" id="mapleg"></p>
+    <div class="scrub">
+      <button class="btn sec sq" type="button" id="play" aria-label="하루 흐름 재생"><i data-ic="play"></i></button>
+      <div class="track"><div class="strip" id="strip" aria-hidden="true"></div><div class="showmk" id="showmk" aria-hidden="true" hidden><span>공연</span></div><div class="nowmk" id="nowmk" aria-hidden="true" hidden><span>지금</span></div><input type="range" id="tr" min="300" max="1560" step="10" value="300" aria-label="지도와 지표의 시각"></div>
+      <div class="blab" id="blab"></div>
+      <div class="ticks" id="ticks" aria-hidden="true"></div>
+      <p class="sleg" id="sleg"></p>
+      <p class="cap acc1" id="acc1"></p>
+    </div>
+    <div class="metrics" id="metrics"></div>
+    <p class="sr" id="srT" aria-live="polite"></p>
+  </div>
+  <div class="h-i">
+    <dl class="facts" id="facts"></dl>
+    <ul class="tips" aria-label="주차 알아두기">
+      <li><b>주말 낮 1~3시에 주차장이 가장 자주 차요</b><span class="cap">한국체육산업개발의 2025년 만차 기록 186건 중 183건이 토·일요일, 124건이 오후 1~3시대였어요</span></li>
+      <li><b>내려 주기만 한다면 10분 안에 나오면 주차 요금이 없어요</b><span class="cap">올림픽공원 주차 안내 기준이에요. 들어오는 차 4대 중 1대가 이렇게 다녀가요</span></li>
+    </ul>
+    <div class="today" id="today"></div>
+    <div class="train" id="train" hidden></div>
+  </div>
+</div></section>
+
+<section class="band" id="shows"><div class="wrap split">
+  <div class="side"><h2>공연이 있는 날은 시작 1시간 반 전과 끝나고 50분 뒤가 가장 붐벼요</h2><p class="body">2025년 큰 공연 28일의 주차장 입출차 기록에서 찾은 규칙을 공연 시작 시각에 맞춰 옮겨 계산했어요. 들어오는 차는 시작 2시간 40분 전부터 늘고, 나가는 차는 끝나고 2시간 뒤면 거의 다 빠져요. 공연 일정과 시작 시각은 올림픽공원 공연 안내를 따랐어요.</p></div>
+  <div>
+    <div class="rows" id="showRows"></div>
+    <div class="moresh" id="moreShows"></div>
+  </div>
+</div></section>
+
+<section class="band" id="plan"><div class="wrap split">
+  <div class="side nos">
+    <h2>세 가지만 고르면 출발 시각이 나와요</h2>
+    <form id="pf">
+      <fieldset><legend>날짜</legend><div id="qDay"></div><p class="cap" style="margin-top:8px">더 뒤의 공연은 위 공연 목록에서 계획 세우기를 누르세요</p></fieldset>
+      <fieldset><legend>할 일</legend><div id="qWhat"></div></fieldset>
+      <fieldset><legend>출발역</legend>
+        <label class="search"><i data-ic="map-pin"></i><input id="org" type="text" placeholder="예: 개봉역" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="orgList" aria-label="출발역" aria-describedby="omsg"></label>
+        <div class="olist" id="orgList" role="listbox" aria-label="출발역 후보" hidden></div>
+        <p class="cap omsg" id="omsg" aria-live="polite">수도권 지하철역 661곳에서 찾아요</p>
+      </fieldset>
+    </form>
+  </div>
+  <div><article class="isl pass" id="pass" aria-labelledby="passH"></article><p class="sr" id="srPass" aria-live="polite"></p></div>
+</div></section>
+
+<section class="band" id="story"><div class="wrap">
+  <div class="split" style="margin-bottom:48px"><h2 id="acc" tabindex="-1">올타임은 얼마나 맞나요</h2><p style="align-self:end;max-width:680px" id="accLead"></p></div>
+  <div class="ins"><div><p class="lbl">주차장 예측</p><p class="bign">87.5% → 91%</p><p>주차장 안에 있는 차량 수를 시간별로 맞힌 정도예요. 2025년 입출차 기록 241만 건으로, 한 달을 통째로 숨기고 나머지 달로 배워서 숨긴 달을 맞히는 방식으로 쟀어요. 내일 이후는 87.5%, 2시간 앞은 그날 실제 값으로 고쳐서 91%예요.</p><p style="margin-top:12px">설·추석(70%)과 평일에 낀 공휴일(72%)은 덜 맞아요. 8월과 9월은 원본이 4대 중 1대만 남아 있어 복원해서 썼어요.</p></div><figure class="fg" style="margin:0"><p class="fgt">데이터를 하나씩 더할 때 주차장 안 차량 예측 정확도</p><ol class="lad" id="lad"></ol></figure></div>
+  <div class="ins"><div><p class="lbl">공연 날 붐비는 시간</p><p class="bign" id="a1"></p><p id="a1t"></p><div class="attr" id="a1b" role="img"></div><div class="fgl al" id="a1l" aria-hidden="true"></div></div><figure class="fg" style="margin:0"><p class="fgt" id="a1c"></p><div class="fgl" aria-hidden="true"><span><i></i>서울시 실측</span><span><i class="d"></i>서울시 예보</span><span><i class="k"></i>올타임이 붐빈다고 본 시간</span></div><div class="fig"><svg id="a1f" role="img"></svg></div></figure></div>
+  <div class="ins"><div><p class="lbl">서울시 혼잡 예보</p><p class="bign" id="a2"></p><p id="a2t"></p></div><figure class="fg" style="margin:0"><p class="fgt">몇 시간 앞을 예보했는지에 따라 혼잡 단계가 맞은 비율</p><div class="fig" style="height:200px"><svg id="a2f" role="img"></svg></div></figure></div>
+  <div class="ins"><div><p class="lbl">공연 보러 오는 길</p><p class="bign" id="a3"></p><p id="a3t"></p></div><figure class="fg" style="margin:0"><p class="fgt">공연 날 평소보다 늘어난 교통카드 하차</p><div class="fig" style="height:120px"><svg id="a3f" role="img"></svg></div></figure></div>
+  <div class="split" style="margin:96px 0 48px"><h2>올림픽공원 주차장 기록 10만 건이 알려준 것</h2><p style="align-self:end;max-width:680px">한국체육산업개발이 공개한 2025년 11월과 12월 입출차 기록 10만 건에서, 하루가 온전히 남아 있는 9일을 골라 분석했어요.</p></div>
+  <div class="ins"><div><p class="lbl">공연 날 저녁</p><p class="bign" id="i1"></p><p id="i1t"></p></div><figure class="fg" style="margin:0"><p class="fgt">주차장 안에 있는 차량 수, 10분 간격</p><div class="fgl" aria-hidden="true"><span><i></i>2025년 12월 6일 토요일 공연 날</span><span><i class="d"></i>공연 없는 평일 평균</span></div><div class="fig"><svg id="f1" role="img"></svg></div></figure></div>
+  <div class="ins"><div><p class="lbl">공연 시작 앞뒤</p><p class="bign">2시간 전부터</p><p>입차는 공연 시작 2시간 전부터 꾸준히 많았고, 가장 많은 때는 50~70분 전이었어요. 공연 중에는 들어오는 차가 10분에 20~30대로 줄었어요. 출차는 예정 종료 80분 뒤에 가장 많았어요.</p></div><figure class="fg" style="margin:0"><p class="fgt">10분 동안 들어오고 나간 차량 수, 12월 6일</p><div class="fgl" aria-hidden="true"><span><i></i>들어온 차</span><span><i class="g"></i>나간 차</span><span><i class="b"></i>공연 시간</span></div><div class="fig"><svg id="f2" role="img"></svg></div></figure></div>
+  <div class="ins"><div><p class="lbl">출구별 출차</p><p class="bign">10분에 124대</p><p>공연이 끝나면 남2문으로 차가 몰려, 10분에 124대에서 더 늘지 않았어요. 동2문과 북2문은 가장 많을 때도 93~99대였어요.</p><p id="i3t" style="margin-top:12px"></p></div><figure class="fg" style="margin:0"><p class="fgt">공연 뒤 10분 동안 각 출구로 나간 가장 많은 차량 수</p><div class="fig" style="height:176px"><svg id="f3" role="img"></svg></div></figure></div>
+  <div class="ins"><div><p class="lbl">눈 오는 날</p><p class="bign">62% 적게</p><p>눈이 내린 12월 4일 저녁 7시에는 평소보다 차가 62% 적게 들어왔어요. 다음 날 아침 8시도 37% 적었어요.</p></div><figure class="fg" style="margin:0"><p class="fgt">한 시간 동안 들어온 차량 수</p><div class="fgl" aria-hidden="true"><span><i></i>12월 4일 목요일, 저녁부터 눈</span><span><i class="d"></i>공연 없는 평일 평균</span></div><div class="fig"><svg id="f4" role="img"></svg></div></figure></div>
+</div></section>
+
+<section class="band" id="lost"><div class="wrap split">
+  <div class="side lostside">
+    <h2>공원에서 잃어버린 물건, 여기서 찾아보세요</h2>
+    <p class="body">올림픽공원 안내센터 게시판의 습득물 공고를 모았어요. 습득하고 한 달이 지나면 송파경찰서로 넘어가요.</p>
+    <dl class="contact">
+      <div><dt class="lbl">평화의광장 안내센터</dt><dd><a href="tel:02-2180-3564">02-2180-3564~5</a></dd></div>
+      <div><dt class="lbl">만남의광장 안내센터</dt><dd><a href="tel:02-2180-3566">02-2180-3566</a></dd></div>
+      <div><dt class="lbl">운영 시간</dt><dd>09:00~19:00<span class="cap">12:00~13:00 쉬는 시간</span></dd></div>
+      <div><dt class="lbl">한 달이 지난 물건</dt><dd><a href="https://www.lost112.go.kr" target="_blank" rel="noopener">lost112.go.kr</a><span class="cap">경찰청 유실물 통합포털, 새 창으로 열려요</span></dd></div>
+    </dl>
+  </div>
+  <div class="lostmain">
+    <div class="lostbar"><label class="search"><i data-ic="search"></i><input id="lq" type="search" placeholder="예: 곰말다리 근처 카드지갑" aria-label="잃어버린 물건 찾기" aria-describedby="lm"></label></div>
+    <div class="lf" id="lf" role="group" aria-label="상태로 거르기"></div>
+    <p class="lmsg lbl" id="lm" aria-live="polite"></p>
+    <div id="items"></div>
+    <div class="more" id="lmore"></div>
+  </div>
+</div></section>
+</main>
+
+<footer class="ft"><div class="wrap">
+  <div><h2>올타임</h2><p>올림픽공원 방문 시간 안내 서비스예요. 한국체육산업개발(주) 공공데이터 활용 경진대회 출품작이며, 올림픽공원 공식 서비스가 아니에요.</p><p id="ftStamp" style="margin-top:8px">서울시 데이터를 불러오는 중이에요.</p><p class="ftl"><a href="/privacy">개인정보 처리방침</a><a href="/terms">이용약관</a></p></div>
+  <div><h2>사용한 데이터</h2><ul><li>한국체육산업개발(주) 올림픽공원 2025 입출차정보</li><li>한국체육산업개발(주) 차량 입출차, 공연, 날씨 연계 데이터</li><li>한국체육산업개발(주) 올림픽공원 실시간 주차 현황</li><li>한국체육산업개발(주) 올림픽공원 공연정보(공연 일정), 공연 시작 시각은 올림픽공원 누리집 공연 안내</li><li>서울특별시 공공데이터 서울시 실시간 도시데이터(올림픽공원)</li><li>서울특별시 공공데이터 서울시 지하철 실시간 도착정보(올림픽공원역)</li><li>올림픽공원 유실물센터 게시판</li><li>수도권 지하철 노선과 역 위치는 © OpenStreetMap&nbsp;기여자(ODbL)</li><li>서울시 차량통행속도(2025년 평일 시속 21.7km, 휴일 23.9km)와 도시고속도로 평균 시속 50.2km(2024년)</li></ul></div>
+  <div><h2>실측과 예상</h2><p>서울시 실측과 예보는 서울시가 발표한 값 그대로예요. 서울시 인구는 500명 단위 구간으로 나와서 그대로 보여드려요. 예상이라고 적은 값은 작년 공연 날 주차장 기록을 공연 시각에 맞춰 옮겨 계산한 값이라 실제와 다를 수 있어요.</p><p style="margin-top:8px">오는 길 시간은 어림값이에요. 지하철은 역 사이 거리로 계산하고 환승 5분, 첫 열차 대기 4분을 더했어요. 자동차는 서울시 평균 통행속도에 공원 주변 도로의 시간대별 속도 비율을 곱하고, 6km가 넘는 구간의 4분의 3은 도시고속도로로 간다고 가정했어요.</p></div>
+</div></footer>
+<noscript><p style="position:fixed;left:0;right:0;bottom:0;margin:0;padding:12px 20px;background:#0A0A0A;color:#FAFAFA;font-size:14px">올타임은 자바스크립트로 지도와 시각을 계산해요. 브라우저에서 자바스크립트를 켜 주세요.</p></noscript>
